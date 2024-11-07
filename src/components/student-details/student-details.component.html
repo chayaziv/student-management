@@ -1,0 +1,45 @@
+<div>
+  <h3>student details:</h3>
+  <input #id type="text" [value]="student?.id" placeholder="id" />
+  <input
+    #firstName
+    type="text"
+    [value]="student?.firstName"
+    placeholder="firstName"
+  />
+  <input
+    #lastName
+    type="text"
+    [value]="student?.lastName"
+    placeholder="lastName"
+  />
+  <input #phon type="text" [value]="student?.phon" placeholder="phon" />
+  <input #adress type="text" [value]="student?.adress" placeholder="adress" />
+  <input #email type="text" [value]="student?.email" placeholder="email" />
+  <select #isactive name="" id="">
+    <option value="true">true</option>
+    <option value="false">false</option>
+  </select>
+  <input
+    #leavingDate
+    type="date"
+    [value]="student?.leavingDate"
+    placeholder="leaving date"
+  />
+  <button
+    (click)="
+      sendDetails(
+        id.value,
+        firstName.value,
+        lastName.value,
+        phon.value,
+        adress.value,
+        email.value,
+        isactive.value == 'true' ? true : false,
+        leavingDate.value
+      )
+    "
+  >
+    save
+  </button>
+</div>

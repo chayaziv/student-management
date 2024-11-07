@@ -1,0 +1,24 @@
+<h1>student :</h1>
+<ul>
+  @for (student of studentList; track student.id) {
+  <app-student
+    (deleteStudent)="deleteStudent($event)"
+    (editStudent)="editStudent($event)"
+    [student]="student"
+  >
+  </app-student>
+  }
+</ul>
+
+<button (click)="addStudent()">add student</button>
+
+@if(flagAdd==true) {
+<app-student-details
+  (saveStudentDetails)="updateStudent($event)"
+></app-student-details>
+} @if(studentToEdit!=null) {
+<app-student-details
+  (saveStudentDetails)="updateStudent($event)"
+  [student]="studentToEdit"
+></app-student-details>
+}

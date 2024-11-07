@@ -1,0 +1,13 @@
+<li>
+  <h3>{{ student?.firstName }} {{ student?.lastName }}</h3>
+  <span style="display: block">id: {{ student?.id }}</span>
+  <span style="display: block">phon: {{ student?.phon }}</span>
+  <span style="display: block">adress: {{ student?.adress }}</span>
+  <span style="display: block">email: {{ student?.email }}</span>
+  <span style="display: block">is active: {{ student?.active }}</span>
+  @if(student?.active==false) {
+  <span style="display: block">leaving date: {{ student?.leavingDate }}</span>
+  }
+  <button (click)="delete()">delete</button>
+  <button (click)="edit()">edit</button>
+</li>
