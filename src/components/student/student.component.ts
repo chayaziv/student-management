@@ -10,11 +10,11 @@ import { Student } from '../../models/student';
 })
 export class StudentComponent {
   @Input()
-  student: Student | undefined;
+  student?: Student;
   @Output()
-  deleteStudent: EventEmitter<any> = new EventEmitter<any>();
+  deleteStudent = new EventEmitter<any>();
   @Output()
-  editStudent: EventEmitter<any> = new EventEmitter<any>();
+  editStudent = new EventEmitter<any>();
 
   delete = () => {
     this.deleteStudent.emit(this.student);

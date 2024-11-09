@@ -58,7 +58,7 @@ export class StudentListComponent {
     this.studentList = this.studentList.filter((s) => s.id != student.id);
   };
 
-  studentToEdit: Student | null = null;
+  studentToEdit?: Student ;
 
   editStudent = (student: Student) => {
     this.studentToEdit = student;

@@ -1,4 +1,4 @@
-<h1>student :</h1>
+<h1>students :</h1>
 <ul>
   @for (student of studentList; track student.id) {
   <app-student
@@ -13,12 +13,12 @@
 <button (click)="addStudent()">add student</button>
 
 @if(flagAdd==true) {
-<app-student-details
-  (saveStudentDetails)="updateStudent($event)"
-></app-student-details>
+  <app-student-details
+    (saveStudentDetails)="updateStudent($event)"
+  ></app-student-details>
 } @if(studentToEdit!=null) {
-<app-student-details
-  (saveStudentDetails)="updateStudent($event)"
-  [student]="studentToEdit"
-></app-student-details>
+  <app-student-details
+    (saveStudentDetails)="updateStudent($event)"
+    [student]="studentToEdit"
+  ></app-student-details>
 }
