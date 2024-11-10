@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Student } from '../../models/student';
 
 @Component({
@@ -13,6 +20,9 @@ export class StudentDetailsComponent {
   student?: Student;
   @Output()
   saveStudentDetails = new EventEmitter<Student>();
+
+  change(): void { }
+  
 
   sendDetails(
     id: string,
@@ -35,5 +45,8 @@ export class StudentDetailsComponent {
       leavingDate: date,
     };
     this.saveStudentDetails.emit(studentToSave);
+  }
+  closeDetails = () => {
+    this.saveStudentDetails.emit();
   }
 }

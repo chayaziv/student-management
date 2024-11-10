@@ -21,15 +21,25 @@
     placeholder="address"
   />
   <input #email type="text" [value]="student?.email" placeholder="email" />
-  <select #isactive name="" id="">
+  <!-- <select #isactive name="" id="">
     <option value="true">true</option>
     <option value="false">false</option>
-  </select>
+  </select> -->
+  is Active
+  <input
+    id="checkboxActive"
+    #isactive
+    type="checkbox"
+    [checked]="student?.active"
+    (change)="change()"
+  />
+
   <input
     #leavingDate
     type="date"
     [value]="student?.leavingDate"
     placeholder="leaving date"
+    [disabled]="isactive.checked"
   />
   <button
     (click)="
@@ -40,11 +50,12 @@
         phone.value,
         address.value,
         email.value,
-        isactive.value == 'true' ? true : false,
+        isactive.checked,
         leavingDate.value
       )
     "
   >
     save
   </button>
+  <button (click)="closeDetails()">close</button>
 </div>

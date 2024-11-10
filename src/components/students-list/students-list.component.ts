@@ -20,7 +20,7 @@ export class StudentListComponent {
       'BB',
       'a34@gmail.com',
       false,
-      '01-02-2024'
+      '2020-02-02'
     ),
     new Student(
       '389554747',
@@ -30,7 +30,7 @@ export class StudentListComponent {
       'BB',
       'a34@gmail.com',
       false,
-      '01-02-2020'
+      '2020-02-02'
     ),
     new Student(
       '2669554321',
@@ -40,7 +40,7 @@ export class StudentListComponent {
       'BB',
       'a34@gmail.com',
       true,
-      '01-02-2025'
+      ''
     ),
     new Student(
       '2247986614',
@@ -50,7 +50,7 @@ export class StudentListComponent {
       'BB',
       'a34@gmail.com',
       true,
-      '01-02-2026'
+      ''
     ),
   ];
 
@@ -68,6 +68,12 @@ export class StudentListComponent {
     this.flagAdd = true;
   };
   updateStudent = (student: Student): void => {
+    if (student == null) {
+      this.flagAdd = false;
+      this.studentToEdit = undefined;
+      return;
+    }
+
     const index = this.studentList.findIndex((s) => s.id == student.id);
     if (index == -1) {
       this.studentList = [...this.studentList, student];

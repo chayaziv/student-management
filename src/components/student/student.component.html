@@ -6,7 +6,7 @@
   <span style="display: block">email: {{ student?.email }}</span>
   <span style="display: block">is active: {{ student?.active }}</span>
   @if(student?.active==false) {
-  <span style="display: block">leaving date: {{ student?.leavingDate }}</span>
+   <span style="display: block">leaving date: {{ student?.leavingDate }}</span>
   }
   <button (click)="delete()">delete</button>
   <button (click)="edit()">edit</button>
