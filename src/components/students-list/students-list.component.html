@@ -16,7 +16,8 @@
   <app-student-details
     (saveStudentDetails)="updateStudent($event)"
   ></app-student-details>
-} @if(studentToEdit!=null) {
+} 
+@if(studentToEdit!=undefined) {
   <app-student-details
     (saveStudentDetails)="updateStudent($event)"
     [student]="studentToEdit"

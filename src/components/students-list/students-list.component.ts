@@ -54,25 +54,27 @@ export class StudentListComponent {
     ),
   ];
 
-  deleteStudent = (student: Student) => {
+  deleteStudent = (student: Student): void => {
     this.studentList = this.studentList.filter((s) => s.id != student.id);
   };
 
-  studentToEdit?: Student ;
+  studentToEdit?: Student;
 
-  editStudent = (student: Student) => {
-    this.studentToEdit = student;
+  editStudent = (student: Student): void => {
+    this.studentToEdit = { ...student };
   };
   flagAdd: boolean = false;
-  addStudent = () => {
+  addStudent = (): void => {
     this.flagAdd = true;
   };
-  updateStudent = (student: Student) => {
+  updateStudent = (student: Student): void => {
     const index = this.studentList.findIndex((s) => s.id == student.id);
-    if (index == -1) this.studentList = [...this.studentList, student];
-    else {
-      //how should i do the update??
-      this.studentList[index] = student;
+    if (index == -1) {
+      this.studentList = [...this.studentList, student];
+    } else {
+      this.studentList[index] = { ...this.studentList[index], ...student };
     }
+    this.flagAdd = false;
+    this.studentToEdit = undefined;
   };
 }

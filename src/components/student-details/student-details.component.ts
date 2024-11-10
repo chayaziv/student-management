@@ -24,16 +24,16 @@ export class StudentDetailsComponent {
     isActive: boolean,
     date: string
   ) {
-    const studentToSave: Student = new Student(
-      id,
-      firstName,
-      lastName,
-      phone,
-      address,
-      email,
-      isActive,
-      date
-    );
+    const studentToSave: Student = {
+      id: id,
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      address: address,
+      email: email,
+      active: isActive,
+      leavingDate: date,
+    };
     this.saveStudentDetails.emit(studentToSave);
   }
 }

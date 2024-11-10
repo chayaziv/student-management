@@ -16,10 +16,10 @@ export class StudentComponent {
   @Output()
   editStudent = new EventEmitter<Student>();
 
-  delete = () => {
+  delete = ():void => {
     this.deleteStudent.emit(this.student);
   };
-  edit = () => {
+  edit = ():void => {
     this.editStudent.emit(this.student);
   };
 }
