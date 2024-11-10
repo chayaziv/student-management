@@ -13,24 +13,14 @@
     [value]="student?.lastName"
     placeholder="lastName"
   />
-  <input 
-    #phon 
-    type="text" 
-    [value]="student?.phon" 
-    placeholder="phon" 
+  <input #phone type="text" [value]="student?.phone" placeholder="phone" />
+  <input
+    #address
+    type="text"
+    [value]="student?.address"
+    placeholder="address"
   />
-  <input 
-    #adress 
-    type="text" 
-    [value]="student?.adress" 
-    placeholder="adress" 
-  />
-  <input 
-    #email 
-    type="text" 
-    [value]="student?.email" 
-    placeholder="email" 
-  />
+  <input #email type="text" [value]="student?.email" placeholder="email" />
   <select #isactive name="" id="">
     <option value="true">true</option>
     <option value="false">false</option>
@@ -47,8 +37,8 @@
         id.value,
         firstName.value,
         lastName.value,
-        phon.value,
-        adress.value,
+        phone.value,
+        address.value,
         email.value,
         isactive.value == 'true' ? true : false,
         leavingDate.value

@@ -18,8 +18,8 @@ export class StudentDetailsComponent {
     id: string,
     firstName: string,
     lastName: string,
-    phon: string,
-    adress: string,
+    phone: string,
+    address: string,
     email: string,
     isActive: boolean,
     date: string
@@ -28,8 +28,8 @@ export class StudentDetailsComponent {
       id,
       firstName,
       lastName,
-      phon,
-      adress,
+      phone,
+      address,
       email,
       isActive,
       date
