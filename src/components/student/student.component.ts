@@ -12,9 +12,9 @@ export class StudentComponent {
   @Input()
   student?: Student;
   @Output()
-  deleteStudent = new EventEmitter<any>();
+  deleteStudent = new EventEmitter<Student>();
   @Output()
-  editStudent = new EventEmitter<any>();
+  editStudent = new EventEmitter<Student>();
 
   delete = () => {
     this.deleteStudent.emit(this.student);
